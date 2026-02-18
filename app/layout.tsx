@@ -17,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <ApolloProviderWrapper> 
-    <ClerkProvider>
+    <ClerkProvider 
+      isSatellite={false}
+      signInFallbackRedirectUrl="/"
+      signUpFallbackRedirectUrl="/"
+    >
     <html lang="en">
       <body
       className="min-h-screen flex"    

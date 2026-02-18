@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: "/chatbot/:path*",
+        source: "/(guest)/:path*",
         headers: [
           {
             key: "Content-Security-Policy",
@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
           {
             key: "X-Frame-Options",
             value: "ALLOWALL",
+          },
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "*",
+          },
+          {
+            key: "Access-Control-Allow-Credentials",
+            value: "true",
           },
         ],
       },
@@ -30,6 +38,10 @@ const nextConfig: NextConfig = {
           {
             key: "Access-Control-Allow-Headers",
             value: "Content-Type",
+          },
+          {
+            key: "Access-Control-Allow-Credentials",
+            value: "true",
           },
         ],
       },
